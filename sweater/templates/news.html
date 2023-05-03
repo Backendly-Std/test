@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Xəbərlər{% endblock %}
+{% block body %}
+    <div class="col-12" id="news">
+        <div class="mt-6 my-4 p-5">
+            <div class="bg-gradient-danger shadow-danger pb-0 col-3" style="border-radius: 10px;">
+                <h6 class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;">
+                    Xəbərlər
+                </h6>
+            </div>
+            {% for news in newss %}
+                <div class="container bg-gradient-light border-radius-md shadow-secondary p-4">
+                    <h6>{{ news_datetime }}</h6>
+                    <h4 class="text-center text-bold">{{ news.header }}</h4>
+                    <p class="text-center">{{ news.paragraph }}</p>
+                </div>
+            <br>
+            {% endfor %}
+            <div class="bg-gradient-danger shadow-danger text-center mt-2 btn p-2 ps-2 col-1" style="border-radius: 10px; margin-left: 580px">
+            <a class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;" href="/home">
+              Geri
+            </a>
+          </div>
+        </div>
+    </div>
+{% endblock %}

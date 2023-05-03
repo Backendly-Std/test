@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% block title %}Ana səhifə{% endblock %}
+{% block body %}
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row" >
+            <div class="col-12">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4" >
+          <div class="container-fluid ps-2 pe-0">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 ">
+                263№ Tam Orta Məktəb
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="#about">
+                    <i class="fa fa-user opacity-6 text-dark me-1"></i>
+                    Haqqımızda
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="#rules">
+                    <i class="fa fa-book opacity-6 text-dark me-1"></i>
+                    Qaydalar
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="#job-time">
+                    <i class="fa fa-business-time opacity-6 text-dark me-1"></i>
+                    İş Vaxtları
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="/teachers">
+                    <i class="fa fa-glasses opacity-6 text-dark me-1"></i>
+                    Müəllimlərimiz
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="/graduates">
+                    <i class="fa fa-user-graduate opacity-6 text-dark me-1"></i>
+                    Məzunlarımız
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="/achievements">
+                    <i class="fa fa-medal opacity-6 text-dark me-1"></i>
+                    Nəaliyyətlərimiz
+                  </a>
+                </li>
+              <ul class="navbar-nav d-lg-flex d-none">
+                <li class="nav-item">
+                  <a href="/sign_in" class="btn btn-sm mb-0 me-1 bg-gradient-light shadow-secondary">
+                      <i class="fas fa-key opacity-6 text-dark me-2 mt-2"></i>
+                      Daxil ol
+                  </a>
+                </li>
+              </ul>
+              </ul>
+            </div>
+          </div>
+        </nav>
+                <!-- End Navbar -->
+
+            </div>
+        </div>
+    </div>
+            <div class="container-fluid py-4">
+                <div class="row">
+                            <!-- News -->
+                    <div class="col-12" id="news">
+
+                        <!-- Main / Info -->
+
+                        <div class="mt-6 my-4 p-5">
+                            <div class="bg-gradient-danger shadow-danger pb-0 col-3" style="border-radius: 10px;">
+                                <h6 class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;">
+                                    Xəbərlər
+                                </h6>
+                            </div>
+                            <a href="/news">
+                                <div class="container bg-gradient-light border-radius-md shadow-secondary p-4">
+                                    <h6>{{ news_datetime }}</h6>
+                                    <h4 class="text-center text-bold">{{ news.header }}</h4>
+                                    <p class="text-center">{{ news.paragraph }}</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                            <!-- Home-->
+                    <div class="col-12" id="home">
+
+                        <!-- Main / Info -->
+
+                        <div class="mt-6 my-4 p-5" id="about">
+                            <div class="bg-gradient-secondary shadow-secondary pb-0 col-3" style="border-radius: 10px;">
+                                <h6 class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;">
+                                    263№ Tam Orta Məktəb Haqqında
+                                </h6>
+                            </div>
+                            <div class="container bg-gradient-light border-radius-md shadow-secondary p-4">
+                                <p class="text-center text-dark">
+                                    Bakı şəhəri Xətai rayonu 263 nömrəli tam orta məktəb şəhid Allahverdi Xəlilov Sabir oğlunun adını daşıyır. Məktəb 1980-ci ildə inşa edilmiş,1981-ci ildən fəaliyyət göstərir.. Məktəb 2013-cü ildə əsaslı təmir olunaraq müəllim və şagirdlərin istifadəsinə verilmişdir. “Azərbaycan Respublikası regionlarının 2019-2023-cü illərdə sosial-iqtisadi inkişafı Dövlət Proqramı”na uyğun olaraq məktəb 2021-ci ildə Bakı Şəhər İcra Hakimiyyəti tərəfindən əsaslı təmir edilib,Təmirdən sonra məktəbdə müasir avadanlıqlarla təmin olunmuş kimya, fizika, biologiya laboratoriyaları, hərbi,  komputer otağı, akt zalı,yeməkxana, lazımı avadanlıqlarla təchiz olunmuş idman zalı, kitabxana,  oxu zalı şagirdlərin ixtiyarına verilmişdir.Fənn kabinetləri lazımı təchizatla təmin edilib. Bütün bunlar müəllim və şagirdlərə İKT-nın nailiyyətlərindən istifadə etməyə şərait yaradır.
+
+ Azərbaycan Respublikası Prezidentinin  1 sentyabr 2009-cu il tarixli Sərəncamı ilə 2012-2013-cü ildə "İlin ən yaxşı ümumtəhsil məktəbi" müsabiqəsində iştirak etmiş və qalibi olmuşdur.
+
+    Azərbaycan Respublikası Təhsil Nazirinin 08 iyun 2015-ci il tarixli 644 nömrəli "Tam orta təhsil səviyyəsində təhsilin təmayüllər üzrə təşkil olunduğu pilot məktəblərin şəbəkəsinin genişləndirilməsi və pilot müəssisələrin 2015 - 2016 - cı dərs ili üçün tədris planlarının təsdiqi haqqında" əmrinə müvafiq olaraq məktəbimiz pilot təhsil müəssisəsi kimi təsdiq edilmişdir. Həmin əmrə müvafiq olaraq 2015-2016-cı tədris ilindən başlayaraq məktəbin 10 və 11 -ci siniflərində texniki fənnlər təmayüllü, riyaziyyat-iqtisadiyyat təmayüllü və humanitar təmayüllü pilot siniflər fəaliyyət göstərir. Şagirdlər 6(altı) və 10(on)-cu siniflərdən etibarən öz arzu,istək və maraqlarına uyğun olaraq "Dillər və ədəbiyyat", "Təbiət fənləri", "İctimai fənlər", "Texniki" fənlər üzrə komplektləşdirilir. Məktəb kabinet sistemində fəaliyyət göstərir, hər bir kabinet əyani vəsaitlərlə zənginləşdirilmişdir. 2016-2017-cı tədris ilindən etibarən məktəbimizdə məktəbəhazırlıq qrupları fəaliyyət göstərir. Məktəbimizdə dərslər Azərbaycan bölməsi üzrə tədris edilir.Məktəbdə 156 nəfər pedaqoji heyət və 30 nəfər texniki işçi heyəti fəaliyyət göstərir.
+
+  Məktəb  1889 yerlikdir,4 mərtəbəlidir.Məktəb 5 günlük iş rejimində 1 növbədə işləyir.Hal-hazırda 1736 nəfər şagird təhsil alır.
+
+    Məzunlarımızın əksəriyyəti yüksək balla istədikləri ali məktəblərə qəbul olunmuşlar. Məzunlarımızdan xarici ölkə ali məktəblərində təhsil alanlar da var. Məzunlarımız müxtəlif dövlət və özəl sektorlarda çalışırlar.
+                                </p>
+                                <div class="slideshow-container">
+                                    {% for i in range( 1, 9 ) %}
+                                        <div class="mySlides fadee hidden">
+                                          <div class="numbertext">{{ i }} / 11</div>
+                                            <img class="img-school" src="/static/img/school/{{ i }}.jpg" alt="Pic{{ i }}">
+                                        </div>
+                                    {% endfor %}
+                                    {% for i in range( 9, 12 ) %}
+                                        <div class="mySlides fadee hidden">
+                                          <div class="numbertext">{{ i }} / 11</div>
+                                            <img class="img-school" src="/static/img/school/{{ i }}.jpeg" alt="Pic1">
+                                        </div>
+                                    {% endfor %}
+                                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                            <!-- Rules -->
+                    <div class="col-12" id="rules">
+                        <div class="mt-6 my-4 p-5">
+                            <div class="bg-gradient-danger shadow-danger pb-0 col-2" style="border-radius: 10px;">
+                                <h6 class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;">
+                                    Qaydalar
+                                </h6>
+                            </div>
+                            <div class="container bg-gradient-light border-radius-md shadow-secondary p-4">
+                                <p class=" text-dark">
+                                    • Dərsdə telefonla danışmamaq və ya səslənmək <br>
+                                    • Dərslərə vaxtında gəlmək və gecikməmək <br>
+                                    • Dərslərdə diqqət yetirilməsi və başqalarının tələblərinə hörmət göstərmək <br>
+                                    • Dəhlizlərdə, koridorlarda və digər ictimai yerlərdə sıra və tənzimliliyə hörmət göstərmək <br>
+                                    • İmtahanlara vaxtında hazırlaşmaq və plagiatdan qorunmaq <br>
+                                    • Dərsdə iştirakda istirahət etməmək və dərs zamanı öz işlərinə məşğul olmamaq <br>
+                                    • Məktəb əşyalarının, kitabların və s. saxlanılması və qaytarılması <br>
+                                    • Fərdi təchizat və məktəb əşyalarının saxlanılması üçün özgü yerlərin təyin edilməsi və onların təmizliyinin qorunması <br>
+                                    • Məktəb qaydalarına uyğun geyimlənmək və təmizliyə diqqət yetirmək <br>
+                                    • Dərs məzmununun və fəaliyyətlərin məktəb müəllimləri və idarə heyəti tərəfindən təqib olunması və qiymətləndirilməsi. <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                            <!-- Job Time -->
+                    <div class="col-12" id="job-time">
+                        <div class="mt-6 my-4 p-5">
+                            <div class="bg-gradient-info shadow-info pb-0 col-2" style="border-radius: 10px;">
+                                <h6 class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;">
+                                    İş Vaxtları
+                                </h6>
+                            </div>
+                            <div class="container bg-gradient-light border-radius-md shadow-secondary p-4">
+                                <p class=" text-dark">
+                                    İş saatları 8:00-9:00 arası başlayır və 14:00-15:00 arasında başa çatır.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <footer class="footer py-4  ">
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 mb-lg-0 mb-4">
+        <div class="copyright text-center text-sm text-muted text-lg-start">
+          © <script>
+            document.write(new Date().getFullYear())
+          </script> ,
+          made<i class="fa fa-hat" aria-hidden="true"></i> by
+          <a href="#home" class="font-weight-bold" aria-current="page">Ibrahim Isazade</a>.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <li class="nav-item">
+            <a href="#home" class="nav-link text-muted" aria-current="page">263№ Tam Orta Məktəb</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link text-muted" aria-current="page">Haqqımızda</a>
+          </li>
+          <li class="nav-item">
+            <a href="#rules" class="nav-link text-muted" aria-current="page">Qaydalar</a>
+          </li>
+          <li class="nav-item">
+            <a href="#job-times" class="nav-link pe-0 text-muted" aria-current="page">İş Vaxtları</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+{% endblock %}

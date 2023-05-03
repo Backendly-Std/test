@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Nəaliyyətlər{% endblock %}
+{% block body %}
+    <div class="col-12" id="news">
+        <div class="mt-6 my-4 p-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Nəaliyyətlərimiz</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+<!--                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>-->
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Yarışma Tipi</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yer</th>
+                        <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Şagirdin Adı / Soyadı</th>
+<!--                        <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Şagirdin Soyadı</th>-->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for achievement in achievements %}
+                        <tr>
+<!--                        <td>-->
+<!--                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.id }}</h6>-->
+<!--                        </td>-->
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.race_type }}</h6>
+                        </td>
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.position }}</h6>
+                        </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column">
+                            <h6 class="mb-0 text-sm">{{ achievement.student_name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ achievement.student_surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <a class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;" href="/home">
+                <div class="bg-gradient-danger shadow-danger text-center mt-2 btn p-2 ps-2 col-1" style="border-radius: 10px; margin-left: 580px">
+                    Geri
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Məzunlarımız{% endblock %}
+{% block body %}
+    <div class="col-12" id="news">
+        <div class="mt-6 my-4 p-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Məzunlar</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+<!--                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>-->
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ad \ Soyad</th>
+<!--                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Maaş</th>-->
+                      <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yığdığı Bal</th>
+                      <th class="font-weight-bolder opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for graduate in graduates %}
+                        <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column">
+                            <h6 class="mb-0 text-sm">{{ graduate.name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ graduate.surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+<!--                     {# <td>-->
+<!--                        <p class=" text-smtext-center  font-weight-bold mb-0">{{ teacher.salary }}₼</p>-->
+<!--                      </td> #} -->
+                      <td class="align-middle">
+                        <span class="text-secondary text-xs font-weight-bold">{{ graduate.points }}</span>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="bg-gradient-danger shadow-danger text-center mt-2 btn p-2 ps-2 col-1" style="border-radius: 10px; margin-left: 580px">
+            <a class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;" href="/home">
+              Geri
+            </a>
+          </div>
+        </div>
+    </div>
+{% endblock %}

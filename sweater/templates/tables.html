@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block body %}
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">263№ Tam Orta Məktəbin ( Şagird / Müəllim ) Cədvəli</h6>
+        </nav>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+<!--        Sagirdler -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Şagirdlər</h6>
+                <a href="{{ url_for('add_member', type = 'student') }}" style="margin-left: 1050px">
+                    <div class="bg-gradient-success shadow-success btn pb-1">
+                        <h6 class="text-white ps-1 text-center">Əlavə Et</h6>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ad \ Soyad</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sinif</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yaş</th>
+                      <th class="font-weight-bolder opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for student in students %}
+                        <tr>
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ student.id }}</h6>
+                        </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ student.name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ student.surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" text-sm text-center font-weight-bold mb-0">{{ student.clas }}</p>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{ student.age }}</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="{{ url_for('edit', id = student.id , type = 'student') }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--        Muellimler -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Müəllimlər</h6>
+                <a href="{{ url_for('add_member', type = 'teacher') }}" style="margin-left: 1050px">
+                    <div class="bg-gradient-success shadow-success btn pb-1">
+                        <h6 class="text-white ps-1 text-center">Əlavə Et</h6>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ad \ Soyad</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Maaş</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yaş</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fənn</th>
+                      <th class="font-weight-bolder opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for teacher in teachers %}
+                        <tr>
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ teacher.id }}</h6>
+                        </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ teacher.name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ teacher.surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class=" text-sm text-center font-weight-bold mb-0">{{ teacher.salary }}₼</p>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{ teacher.age }}</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{ teacher.subject }}</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--         Xeberler-->
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Xəbərlər</h6>
+                <a href="/add_news" style="margin-left: 1050px">
+                    <div class="bg-gradient-success shadow-success btn pb-1">
+                        <h6 class="text-white ps-1 text-center">Əlavə Et</h6>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Başlıq</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Abzas</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for news in newss %}
+                        <tr>
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ news.id }}</h6>
+                        </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ news.header }}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                          <div class="d-flex px-2 py-1">
+                            <div class="d-flex flex-column justify-content-center">
+                                <p class="mb-0 text-sm text-center">{{ news.paragraph }}</p>
+                            </div>
+                          </div>
+                      </td>
+                      <td class="align-middle">
+                          <div class="btn bg-gradient-danger shadow-danger">
+                            <a href="{{ url_for('delete_news', id = news.id) }}" class="text-white font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                              Delete
+                            </a>
+                          </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--        Məzunlar -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Məzunlar</h6>
+                <a href="{{ url_for('add_member', type='graduate') }}" style="margin-left: 1050px">
+                    <div class="bg-gradient-success shadow-success btn pb-1">
+                        <h6 class="text-white ps-1 text-center">Əlavə Et</h6>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+<!--                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>-->
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Ad \ Soyad</th>
+<!--                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Maaş</th>-->
+<!--                      <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yaş</th>-->
+                        <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yığdığı Bal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for graduate in graduates %}
+                        <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column">
+                            <h6 class="mb-0 text-sm">{{ graduate.name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ graduate.surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+<!--                     {# <td>-->
+<!--                        <p class=" text-smtext-center  font-weight-bold mb-0">{{ teacher.salary }}₼</p>-->
+<!--                      </td> #} -->
+<!--                      <td class="align-middle">-->
+<!--                        <span class="text-secondary text-xs font-weight-bold">{{ graduate.age }}</span>-->
+<!--                      </td>-->
+                      <td class="align-middle">
+                        <span class="text-secondary text-xs font-weight-bold">{{ graduate.points }}</span>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--        Nəaliyyətlər -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-secondary shadow-secondary border-radius-lg pt-2 pb-1">
+                <h6 class="text-white text-capitalize ps-3" style="display: inline-block;">Nəaliyyətlər</h6>
+                <a href="{{ url_for('add_member', type='achievement') }}" style="margin-left: 1050px">
+                    <div class="bg-gradient-success shadow-success btn pb-1">
+                        <h6 class="text-white ps-1 text-center">Əlavə Et</h6>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Yarışma Tipi</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Yer</th>
+                        <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Şagirdin Adı / Soyadı</th>
+<!--                        <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Şagirdin Soyadı</th>-->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for achievement in achievements %}
+                        <tr>
+<!--                        <td>-->
+<!--                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.id }}</h6>-->
+<!--                        </td>-->
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.race_type }}</h6>
+                        </td>
+                        <td>
+                            <h6 class="mb-0 text-center text-xs font-weight-bold">{{ achievement.position }}</h6>
+                        </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column">
+                            <h6 class="mb-0 text-sm">{{ achievement.student_name }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ achievement.student_surename }}</p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <a class="text-center text-light text-bold pl-0 pb-2 pt-2" style="text-align:center;" href="/logout">
+            <div class="bg-gradient-danger shadow-danger text-center btn p-2 ms-3 col-1" style="border-radius: 10px;">
+              Geri
+            </div>
+          </a>
+  </main>
+{% endblock %}
